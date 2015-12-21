@@ -3,6 +3,7 @@ LOGFILE=/var/log/nginx/access.log
 #DATE=`date +%F_%H:%M`
 TMP_A=/mnt/a.txt
 TMP_B=/mnt/b.txt
+find $LOGFILE -print0 | xargs -0 du -sb > $TMP_A
 #TMP_C=/mnt/c.txt
 LOG=/mnt/newlog
 full_first_time=`ls ${LOGFILE} --full-time | awk '{print $7}'`
